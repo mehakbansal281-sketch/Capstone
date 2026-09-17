@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  ml-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ml_business_solution_api
+    ports:
+      - "8000:8000"
+    environment:
+      - LOG_DIR=/app/logs
+      - MODEL_PATH=/app/models/best_model.joblib
+      - PREPROCESSOR_PATH=/app/models/preprocessing_pipeline.joblib
+      - DATA_PATH=/app/data/sales_data.csv
+    volumes:
+      - ./logs:/app/logs
+      - ./reports/plots:/app/reports/plots
+      - ./models:/app/models
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped

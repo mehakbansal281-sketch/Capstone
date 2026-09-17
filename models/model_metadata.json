@@ -1,0 +1,63 @@
+{
+  "best_model_name": "Hist Gradient Boosting",
+  "feature_names": [
+    "Unit_Price",
+    "Quantity_Ordered",
+    "Discount_Percent",
+    "Marketing_Spend",
+    "Customer_Rating",
+    "Store_Size_SqFt",
+    "Is_Holiday_Season",
+    "Country_Australia",
+    "Country_Canada",
+    "Country_France",
+    "Country_Germany",
+    "Country_Japan",
+    "Country_UK",
+    "Country_USA",
+    "Product_Category_Apparel",
+    "Product_Category_Automotive",
+    "Product_Category_Books",
+    "Product_Category_Electronics",
+    "Product_Category_Health & Beauty",
+    "Product_Category_Home & Kitchen"
+  ],
+  "evaluation_results": {
+    "Baseline (Mean)": {
+      "MAE": 1855.8933,
+      "MSE": 5227807.6736,
+      "RMSE": 2286.44,
+      "R2": -0.0021,
+      "MAPE": 99.948
+    },
+    "Linear Regression (Ridge)": {
+      "MAE": 646.4022,
+      "MSE": 737501.1165,
+      "RMSE": 858.7789,
+      "R2": 0.8586,
+      "MAPE": 38.8812
+    },
+    "Random Forest": {
+      "MAE": 194.8379,
+      "MSE": 71416.9095,
+      "RMSE": 267.2394,
+      "R2": 0.9863,
+      "MAPE": 7.8921
+    },
+    "Gradient Boosting": {
+      "MAE": 140.3724,
+      "MSE": 34591.5573,
+      "RMSE": 185.9881,
+      "R2": 0.9934,
+      "MAPE": 6.2423
+    },
+    "Hist Gradient Boosting": {
+      "MAE": 110.9708,
+      "MSE": 23276.858,
+      "RMSE": 152.5676,
+      "R2": 0.9955,
+      "MAPE": 4.8773
+    }
+  },
+  "test_sample_count": 1000
+}

@@ -1,0 +1,50 @@
+2026-09-17 16:31:42,684 - DataIngestion - WARNING - Data file 'data/sales_data.csv' not found. Generating default dataset...
+2026-09-17 16:31:42,685 - DataIngestion - INFO - Generating synthetic business dataset with 5000 records...
+2026-09-17 16:31:42,691 - DataIngestion - INFO - Dataset generation completed.
+2026-09-17 16:31:42,773 - DataIngestion - INFO - Dataset saved to 'data/sales_data.csv'.
+2026-09-17 16:31:42,773 - DataIngestion - INFO - Validating dataset integrity...
+2026-09-17 16:31:42,775 - DataIngestion - INFO - Validation successful. Rows: 5000, Columns: 12
+2026-09-17 16:31:42,775 - DataIngestion - INFO - Missing Value Counts: {'Transaction_ID': 0, 'Date': 0, 'Country': 0, 'Product_Category': 47, 'Unit_Price': 0, 'Quantity_Ordered': 0, 'Discount_Percent': 0, 'Marketing_Spend': 111, 'Customer_Rating': 94, 'Store_Size_SqFt': 0, 'Is_Holiday_Season': 0, 'Sales_Amount': 0}
+2026-09-17 16:31:57,021 - ModelTraining - INFO - Starting end-to-end model training pipeline...
+2026-09-17 16:31:57,021 - DataIngestion - INFO - Loading data from 'data/sales_data.csv'...
+2026-09-17 16:31:57,059 - DataIngestion - INFO - Validating dataset integrity...
+2026-09-17 16:31:57,062 - DataIngestion - INFO - Validation successful. Rows: 5000, Columns: 12
+2026-09-17 16:31:57,062 - DataIngestion - INFO - Missing Value Counts: {'Transaction_ID': 0, 'Date': 0, 'Country': 0, 'Product_Category': 47, 'Unit_Price': 0, 'Quantity_Ordered': 0, 'Discount_Percent': 0, 'Marketing_Spend': 111, 'Customer_Rating': 94, 'Store_Size_SqFt': 0, 'Is_Holiday_Season': 0, 'Sales_Amount': 0}
+2026-09-17 16:31:57,106 - ModelTraining - INFO - Split data into train shape (4000, 9) and test shape (1000, 9).
+2026-09-17 16:31:57,106 - DataPreprocessing - INFO - Fitting DataPreprocessor pipeline...
+2026-09-17 16:31:57,410 - DataPreprocessing - INFO - Saved preprocessor pipeline to 'models\preprocessing_pipeline.joblib'.
+2026-09-17 16:31:57,411 - ModelTraining - WARNING - XGBoost module not installed. Proceeding with HistGradientBoosting.
+2026-09-17 16:31:57,411 - ModelTraining - INFO - Training and evaluating all models...
+2026-09-17 16:31:57,415 - ModelTraining - INFO - [Baseline (Mean)] RMSE: 2286.44, R2: -0.0021, MAE: 1855.8933
+2026-09-17 16:31:57,418 - ModelTraining - INFO - [Linear Regression (Ridge)] RMSE: 858.7789, R2: 0.8586, MAE: 646.4022
+2026-09-17 16:31:57,741 - ModelTraining - INFO - [Random Forest] RMSE: 267.2394, R2: 0.9863, MAE: 194.8379
+2026-09-17 16:31:58,192 - ModelTraining - INFO - [Gradient Boosting] RMSE: 185.9881, R2: 0.9934, MAE: 140.3724
+2026-09-17 16:31:58,476 - ModelTraining - INFO - [Hist Gradient Boosting] RMSE: 152.5676, R2: 0.9955, MAE: 110.9708
+2026-09-17 16:31:58,478 - ModelTraining - INFO - Selected Best Model: 'Hist Gradient Boosting' with R2=0.9955
+2026-09-17 16:31:58,498 - ModelTraining - INFO - Model training pipeline executed successfully.
+2026-09-17 16:32:09,320 - EDAEvaluation - INFO - Generating EDA & Model Comparison Visualizations...
+2026-09-17 16:32:09,321 - DataIngestion - INFO - Loading data from 'data/sales_data.csv'...
+2026-09-17 16:32:09,335 - DataIngestion - INFO - Validating dataset integrity...
+2026-09-17 16:32:09,339 - DataIngestion - INFO - Validation successful. Rows: 5000, Columns: 12
+2026-09-17 16:32:09,339 - DataIngestion - INFO - Missing Value Counts: {'Transaction_ID': 0, 'Date': 0, 'Country': 0, 'Product_Category': 47, 'Unit_Price': 0, 'Quantity_Ordered': 0, 'Discount_Percent': 0, 'Marketing_Spend': 111, 'Customer_Rating': 94, 'Store_Size_SqFt': 0, 'Is_Holiday_Season': 0, 'Sales_Amount': 0}
+2026-09-17 16:32:11,798 - EDAEvaluation - INFO - Saved: reports/plots\correlation_heatmap.png
+2026-09-17 16:32:13,227 - EDAEvaluation - INFO - Saved: reports/plots\distribution_plots.png
+2026-09-17 16:32:13,645 - EDAEvaluation - INFO - Saved: reports/plots\missing_value_analysis.png
+2026-09-17 16:32:14,504 - EDAEvaluation - INFO - Saved: reports/plots\business_insights.png
+2026-09-17 16:32:15,251 - EDAEvaluation - INFO - Saved: reports/plots\baseline_vs_models_comparison.png
+2026-09-17 16:32:15,346 - DataPreprocessing - INFO - Loaded preprocessor pipeline from 'models/preprocessing_pipeline.joblib'.
+2026-09-17 16:32:15,346 - EDAEvaluation - WARNING - Model does not provide feature importances/coefficients.
+2026-09-17 16:32:15,347 - EDAEvaluation - INFO - All visualizations successfully saved to 'reports/plots'.
+2026-09-17 16:32:28,018 - EDAEvaluation - INFO - Generating EDA & Model Comparison Visualizations...
+2026-09-17 16:32:28,019 - DataIngestion - INFO - Loading data from 'data/sales_data.csv'...
+2026-09-17 16:32:28,029 - DataIngestion - INFO - Validating dataset integrity...
+2026-09-17 16:32:28,032 - DataIngestion - INFO - Validation successful. Rows: 5000, Columns: 12
+2026-09-17 16:32:28,032 - DataIngestion - INFO - Missing Value Counts: {'Transaction_ID': 0, 'Date': 0, 'Country': 0, 'Product_Category': 47, 'Unit_Price': 0, 'Quantity_Ordered': 0, 'Discount_Percent': 0, 'Marketing_Spend': 111, 'Customer_Rating': 94, 'Store_Size_SqFt': 0, 'Is_Holiday_Season': 0, 'Sales_Amount': 0}
+2026-09-17 16:32:28,773 - EDAEvaluation - INFO - Saved: reports/plots\correlation_heatmap.png
+2026-09-17 16:32:30,131 - EDAEvaluation - INFO - Saved: reports/plots\distribution_plots.png
+2026-09-17 16:32:30,738 - EDAEvaluation - INFO - Saved: reports/plots\missing_value_analysis.png
+2026-09-17 16:32:31,584 - EDAEvaluation - INFO - Saved: reports/plots\business_insights.png
+2026-09-17 16:32:32,178 - EDAEvaluation - INFO - Saved: reports/plots\baseline_vs_models_comparison.png
+2026-09-17 16:32:32,248 - DataPreprocessing - INFO - Loaded preprocessor pipeline from 'models/preprocessing_pipeline.joblib'.
+2026-09-17 16:32:32,248 - EDAEvaluation - WARNING - Model does not provide feature importances/coefficients.
+2026-09-17 16:32:32,249 - EDAEvaluation - INFO - All visualizations successfully saved to 'reports/plots'.
